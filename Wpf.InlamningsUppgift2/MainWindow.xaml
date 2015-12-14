@@ -1,0 +1,142 @@
+﻿<Window x:Class="Wpf.InlamningsUppgift2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf.InlamningsUppgift2"
+        mc:Ignorable="d"
+        Title="Inlämningsuppgift Kalle Hallert" Height="500" Width="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel>
+    <Grid Name="GridOne" ShowGridLines="True">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <!--<ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>-->
+            
+            <!--First row-->
+            
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Kundtyp: " HorizontalAlignment="Right" Margin="5"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <RadioButton GroupName="RadioBtn" x:Name="RadioBtnComp" Content="Företag" Margin="5" Checked="RadioBtnComp_OnChecked" />
+            <RadioButton GroupName="RadioBtn" Name="RadioBtnPriv" Content="Privat" Margin="5" Checked="RadioBtnPriv_OnChecked"/>
+        </StackPanel>
+        
+        <!--second row-->
+
+        <TextBlock Grid.Row="1" Text="Företag" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="TxtBoxComp" Grid.Row="1" Grid.Column="1" Margin="5" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+        
+        <!--third row-->
+
+        <TextBlock Grid.Row="2" Text="Kontaktperson" HorizontalAlignment="Right" Margin="5"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch">
+        <Label Content="Förnamn:"/>
+        <TextBox Name="TxtContactFirst" Margin="5" MinWidth="100"/>
+            <Label Content="Efternamn:"/>
+                <TextBox Name="TxtContactSur" Margin="5" MinWidth="100"/>
+        </StackPanel>
+        
+        <!--fourth row-->
+
+        <TextBlock Grid.Row="3" Text="Födelsedatum" HorizontalAlignment="Right" Margin="5"/>
+        <DatePicker Name="DatePicker" Grid.Row="3" Grid.Column="1" Margin="2" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+        
+        <!--fifth row-->
+
+        <TextBlock Grid.Row="4" Text="Adress" HorizontalAlignment="Right" Margin="5"/>
+
+        <WrapPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch">
+            <Label Content="Gatuadress:"/>
+            <TextBox Name="TxtAddressStreet" Margin="5" MinWidth="100"/>
+            <Label Content="Postnummer:"/>
+            <TextBox Name="TxtAddressZip" Margin="5" MinWidth="100"/>
+            <Label Content="Ort:"/>
+            <TextBox Name="TxtAddressCity" Margin="5" MinWidth="100"/>
+            </WrapPanel>
+        
+        <!--sixth row-->
+
+        <TextBlock Grid.Row="5" Text="Telefonnummer" HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Name="TxtPhone" Grid.Row="5" Grid.Column="1" Margin="5" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+        
+        <!--seventh row-->
+
+        <TextBlock Grid.Row="6" Text="E-Postadress" HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Name="TxtEmail" Grid.Row="6" Grid.Column="1" Margin="5" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+        
+        <!--eigth row-->
+
+        <TextBlock Grid.Row="7" Text="Vill du vårat nyhetsbrev?" HorizontalAlignment="Right" Margin="5"/>
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <CheckBox Name="CheckBoxYes" Content="Ja!" Margin="5" Checked="CheckBoxYes_OnChecked" />
+           
+        </StackPanel>
+        
+        <!--ninth row-->
+
+        <TextBlock Grid.Row="8" Text="Anteckningar" HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Name="TxtRichNote" Grid.Row="8" Grid.Column="1" Margin="5" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+
+        <!--Tenth row-->
+        
+        <Button Grid.Row="9" Grid.Column="1" Content="Spara" MinWidth="150" MaxWidth="200" HorizontalAlignment="Left" Click="ButtonBase_OnClick"/>
+        
+        <!--eleventh row-->
+
+            <TextBlock Grid.Row="10" Text="Sök" HorizontalAlignment="Right" Margin="5"/>
+            <StackPanel Grid.Row="10" Grid.Column="1">
+            <TextBox Name="TxtBoxSearch"  Margin="5" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left"/>
+                <Button Margin="5" Content="Sök" Name="BtnSearch" MinWidth="100" MaxWidth="200" HorizontalAlignment="Left" Height="20" Click="BtnSearch_OnClick"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBlock Name="TxtRichSearch" Margin="5" MinWidth="100" HorizontalAlignment="Left" />
+                    </ScrollViewer>
+                </StackPanel>
+        
+        <!--twelth row-->
+        
+        </Grid>
+        <!--<Grid Name="GridTwo">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            --><!--<Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                </Grid.ColumnDefinitions>--><!--
+                <ListView Name="listPerson" Margin="5" ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Kundtyp" DisplayMemberBinding="{Binding RadioBtn}"/>
+                            <GridViewColumn Header="Företag" DisplayMemberBinding="{Binding TxtBoxComp}"/>
+                            <GridViewColumn Header="Kontaktperson" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="Födelsedatum" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="Telefonnummer" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="E-post" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="Nyhetsbrev" DisplayMemberBinding="{Binding Emejl}"/>
+                            <GridViewColumn Header="Anteckningar" DisplayMemberBinding="{Binding Emejl}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>-->
+        </StackPanel>
+    </ScrollViewer>
+   
+</Window>
